@@ -1,26 +1,36 @@
-# TACNIQ-ROS
-This repository contains ROS scripts to connect and visualize tacniq sensors. Tested on Melodic.
+Tacniq visualizer for MAC
 
-## Prerequisits
+### Prerequisits:
 
-1. Install tacniq driver using sudo priviligies:
+Assuming you have python3 installed:
 
-``sudo bash tac_linux_driver.sh``
+1. Create python environment:
 
-2. Make sure required python packages are installed: ``requirements.txt``
+```python3 -m venv tacniq_env```
 
-## How to run
+2. Source it
 
-1. Connect to the sensor:
+```source tacniq_env/bin/activate```
 
-``rosrun tacniq_ros tacniq_connect.py ``
+3. Install third party modules:
 
-Note: there are two publishers ``tacniq/left`` and ``tacniq/right``.
+```python3 -m pip install -r requirements.txt```
 
-2. Visualize:
+### Visualize:
 
-``rosrun tacniq_ros visualize.py``
+Simply run:
 
-## License 
+```python3 OneFingerVisualizer.py```
 
-``tacniq-ros`` is released under the MIT license.
+### Troubleshooting
+
+Check missing dependencies:\
+Cython\
+python\
+hdiapi\
+pygame
+
+Helpful links for getting dependencies up and running for mac:\
+     https://github.com/trezor/cython-hidapi\
+     https://ports.macports.org/port/hidapi/\
+     https://trezor.github.io/cython-hidapi/
